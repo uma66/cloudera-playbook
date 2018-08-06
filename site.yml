@@ -1,19 +1,19 @@
 ---
 # Cloudera playbook
 
-- name: Configure Cloudera Manager Repository
+- name: Configure Cloudera Manager Repository # Clouderaのyumリポジトリを追加
   hosts: cdh_servers
   roles:
     - cm_repo
   tags: cm_repo
 
-- name: Install rngd
+- name: Install rngd # 乱数ジェネレータ用パッケージ
   hosts: cdh_servers
   roles:
     - rngd
   tags: rngd
 
-- name: Install Java
+- name: Install Java  # Java1.7のインストール
   hosts: cdh_servers
   roles:
     - java
